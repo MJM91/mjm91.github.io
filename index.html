@@ -7,6 +7,31 @@
         <link href="./css/style.css" rel="stylesheet">
     </head>
     <body>
-        <h1>Testing...</h1>
+        <h2>
+            Welcome To My Resume
+        </h2>
+        
+        <ul id = 'jobs' ></ul>
+
+        <script src=  'https://unpkg.com/axios/dist/axios.min.js' ></script>
+        <script>
+            axios
+                .get('/docs/jobs.json')
+                .then(
+                    function(res) {
+                        var el = document.getElementById('jobs');
+                        
+                        el.innerHTML = Html(
+                            res.data.jobs,
+                            function(job) {
+                                return "<li>" + job.name + "</li>"
+                            }
+                        );
+                    }
+                );
+                function Html(array , func) {
+                    return array.map(func).join("");
+                } 
+        </script>
     </body>
 </html>
