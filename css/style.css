@@ -2,3 +2,23 @@ li {
     margin: 0 0 1em 0;
     border-bottom: 1px solid #efe;
 }
+
+.module {
+    border-radius: 1em 1em 0 1em;
+    background-color: #fff;
+    height: 100%;
+    padding:1em;
+    border:1px black solid;
+    margin : 0 0 1em 0;
+}
+
+.module__section {
+    border-top : 1px solid black;
+}
+body {
+    background-color:#959ca8;
+}
+
+.center {
+    text-align: center;    
+}
