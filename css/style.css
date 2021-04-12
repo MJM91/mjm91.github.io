@@ -1,6 +1,7 @@
 li {
     margin: 0 0 1em 0;
     border-bottom: 1px solid #efe;
+    /*border-top:1px solid #efe;*/
 }
 
 .module {
@@ -15,6 +16,7 @@ li {
 .module__section {
     border-top : 1px solid black;
 }
+
 body {
     background-color:#959ca8;
 }
