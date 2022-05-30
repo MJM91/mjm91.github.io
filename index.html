@@ -15,7 +15,10 @@
             .module__header  {
                 padding : 0 0 0 0;
                 border-bottom : .1rem solid gray;
-                font-size: 1.5rem;
+                font-size: 1.1rem;
+                /* display: flex;
+                column-gap:5rem; */
+                cursor: pointer;
             }
             .module__content {
                 margin-top:  1rem;
@@ -31,19 +34,25 @@
                 border-right: 1px solid gray;
                 border-radius: 0 1rem 0 0;
             }
-            
+            .resume__title {
+                color : lightgray;
+            }
+            .resume__description {
+                font-style: italic;
+            }
         </style>
     </head>
     <body>
-        <div class = ''>
+        <script src="https://unpkg.com/alpinejs" defer></script>
+        <div class = '' >
             <div class = 'header row' >
                 <h3>
                     Michael Moloughney
                 </h3>
-                <h4>
+                <h4 class="resume__title">
                     Web Developer
                 </h4>
-                <p>
+                <p class="resume__description">
                     A self-motivated, solutions-based programmer with an extensive knowledge of multiple programming languages and frameworks. Capable of working with a variety of technology and software solutions, and managing databases. Valuable team member who has experience diagnosing problems and developing solutions. Well-versed in the phases of the software development lifecycle and working knowledge of algorithms and data structures.  History of successful contributions in multiple facets of a company, developing customized solutions improving business processes, operations, and efficiency.
                 </p>
             </div>
@@ -54,11 +63,12 @@
             </div>
             <main class = 'main row' >
                 <div class='three columns left-column'>
-                    <div class="module">
-                        <div class="module__header">
+                    <div class="module" x-data="{ open : true }">
+                        <div class="module__header" @click="open=!open">
+                            <span x-text="open ? '-' :'+' ">-</span>
                             Personal Info
                         </div>
-                        <div class = 'module__content' >
+                        <div class = 'module__content'  x-show="open">
                             <div>
                                 <ul class = 'no-bullets'>
                                     <li>
@@ -77,15 +87,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="module">
-                        <div class="module__header">
+                    <div class="module" x-data="{ open : true }">
+                        <div class="module__header" @click="open=!open">
+                            <span  x-text="open ? '-' : '+'"></span>
                             Programming Languages|Frameworks
                         </div>
-                        <div class = 'module__content' >
+                        <div class = 'module__content' x-show="open" >
                             <div>
                                 <ul class = 'no-bullets'>
                                     <li>
-                                        Javascript | React, Mithril.js, Vue.js, Angular.js&lt;2
+                                        Javascript | React, Vue.js, <Mithril class="js">    </Mithril>
                                     </li>
                                     <li>
                                         C# | ASP.NET MVC
@@ -100,11 +111,12 @@
                             </div>
                         </div>
                     </div> 
-                    <div class="module">
-                        <div class="module__header">
+                    <div class="module" x-data="{ open : true }">
+                        <div @click="open=!open" class="module__header" >
+                            <span  x-text="open ? '-' : '+'"></span>
                             Software
                         </div>
-                        <div class="module__content">
+                        <div class="module__content" x-show="open">
                             <ul class = 'no-bullets' >
                                 <li>
                                     Visual Studio
@@ -126,11 +138,12 @@
                     </div>
                 </div>
                 <div class = 'nine columns'>
-                    <div class="module">
-                        <div class = 'module__header'>
+                    <div class="module" x-data="{ open : true }">
+                        <div @click="open=!open" class = 'module__header'>
+                            <span x-text="open ? '-' :'+'"></span>
                             Experience
                         </div>
-                        <div class="module__content">
+                        <div class="module__content" x-show="open">
                             <ul class = 'no-bullets' >
                                 <li class = 'row' >
                                     <div class = 'three columns' >
@@ -156,7 +169,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="module__content">
+                        <div class="module__content" x-show="open">
                                 <ul class = 'no-bullets' >
                                     <li class = 'row' >
                                         <div class = 'three columns' >
@@ -177,11 +190,12 @@
                                 </ul>
                             </div>
                     </div>
-                    <section class="module">
-                        <div class = 'module__header'>
+                    <section class="module" x-data="{ open : true }">
+                        <div class = 'module__header' @click="open=!open">
+                            <span  x-text="open ? '-' : '+'"></span>
                             Education
                         </div>
-                        <div class = 'module__content'>
+                        <div class = 'module__content' x-show="open">
                             <div class="row">
                                 <div class = 'three columns'>
                                     <b>2010-2014</b>
@@ -196,11 +210,12 @@
                             </div>
                         </div>
                     </section>
-                    <section class="module">
-                        <div class="module__header">
+                    <section class="module" x-data="{ open : true}">
+                        <div class="module__header" @click="open=!open">
+                            <span x-text="open ? '-' :'+'"></span>
                             Projects
                         </div>
-                        <div class="module__content">
+                        <div class="module__content" x-show="open">
                             <ul class="">
                                 <li>
                                     <a href="https://mdx.mcenterusa.com">MDX (Digital implant planning tracking website)</a>
